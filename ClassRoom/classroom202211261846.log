@@ -1,0 +1,20 @@
+ yyyy-MM-dd HH:mm-ss.fff zzz} [INF] Request starting HTTP/2 GET https://localhost:7233/api/Account/bumen - -
+ yyyy-MM-dd HH:mm-ss.fff zzz} [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+ yyyy-MM-dd HH:mm-ss.fff zzz} [INF] Executing endpoint 'ClassRoom.Controllers.AccountController.Profile (ClassRoom)'
+ yyyy-MM-dd HH:mm-ss.fff zzz} [INF] Route matched with {action = "Profile", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Profile(System.String) on controller ClassRoom.Controllers.AccountController (ClassRoom).
+ yyyy-MM-dd HH:mm-ss.fff zzz} [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+ yyyy-MM-dd HH:mm-ss.fff zzz} [INF] Executed DbCommand (80ms) [Parameters=[@__username_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."UserName" = @__username_0)
+ yyyy-MM-dd HH:mm-ss.fff zzz} [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."UserName" = @__username_0
+LIMIT 1
+ yyyy-MM-dd HH:mm-ss.fff zzz} [INF] user login with id "77defb8c-6602-439d-a03c-cc2cbe0f69ec"
+ yyyy-MM-dd HH:mm-ss.fff zzz} [INF] Executing OkObjectResult, writing value of type 'ClassRoom.Model.UserDto'.
+ yyyy-MM-dd HH:mm-ss.fff zzz} [INF] Executed action ClassRoom.Controllers.AccountController.Profile (ClassRoom) in 9053.3727ms
+ yyyy-MM-dd HH:mm-ss.fff zzz} [INF] Executed endpoint 'ClassRoom.Controllers.AccountController.Profile (ClassRoom)'
+ yyyy-MM-dd HH:mm-ss.fff zzz} [INF] Request finished HTTP/2 GET https://localhost:7233/api/Account/bumen - - - 200 - application/json;+charset=utf-8 9430.5842ms

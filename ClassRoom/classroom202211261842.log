@@ -1,0 +1,64 @@
+ [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+ [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Key", "c"."Name"
+FROM "Courses" AS "c"
+ [INF] Executed DbCommand (23ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CourseId", "u"."IsAdmin", "u"."UserId"
+FROM "userCourses" AS "u"
+WHERE "u"."CourseId" = @__get_Item_0
+ [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__get_Item_0
+ [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__get_Item_0
+ [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CourseId", "u"."IsAdmin", "u"."UserId"
+FROM "userCourses" AS "u"
+WHERE "u"."CourseId" = @__get_Item_0
+ [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CourseId", "u"."IsAdmin", "u"."UserId"
+FROM "userCourses" AS "u"
+WHERE "u"."CourseId" = @__get_Item_0
+ [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CourseId", "u"."IsAdmin", "u"."UserId"
+FROM "userCourses" AS "u"
+WHERE "u"."CourseId" = @__get_Item_0
+ [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CourseId", "u"."IsAdmin", "u"."UserId"
+FROM "userCourses" AS "u"
+WHERE "u"."CourseId" = @__get_Item_0
+ [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__get_Item_0
+ [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__get_Item_0
+ [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ClassRoom.Model.CourseDto, ClassRoom, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ [INF] Executed action ClassRoom.Controllers.CourseController.GetCourse (ClassRoom) in 9674.7603ms
+ [INF] Executed endpoint 'ClassRoom.Controllers.CourseController.GetCourse (ClassRoom)'
+ [INF] Request finished HTTP/2 GET https://localhost:7233/api/Course/get-courses - - - 200 - application/json;+charset=utf-8 10045.6635ms
+ [INF] Request starting HTTP/2 GET https://localhost:7233/api/Account/bumen - -
+ [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+ [INF] Executing endpoint 'ClassRoom.Controllers.AccountController.Profile (ClassRoom)'
+ [INF] Route matched with {action = "Profile", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Profile(System.String) on controller ClassRoom.Controllers.AccountController (ClassRoom).
+ [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+ [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."UserName" = @__username_0)
+ [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."UserName" = @__username_0
+LIMIT 1
+ [INF] user login with id "77defb8c-6602-439d-a03c-cc2cbe0f69ec"
+ [INF] Executing OkObjectResult, writing value of type 'ClassRoom.Model.UserDto'.
+ [INF] Executed action ClassRoom.Controllers.AccountController.Profile (ClassRoom) in 302.4404ms
+ [INF] Executed endpoint 'ClassRoom.Controllers.AccountController.Profile (ClassRoom)'
+ [INF] Request finished HTTP/2 GET https://localhost:7233/api/Account/bumen - - - 200 - application/json;+charset=utf-8 437.5419ms

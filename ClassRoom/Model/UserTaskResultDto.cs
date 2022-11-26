@@ -2,13 +2,13 @@
 
 namespace ClassRoom.Model
 {
-    public class UserTaskResultDto : CreateTaskDto
+    public class UserTaskResultDto : TaskDto
     {
-        public UserTaskResult UserResult { get; set; }
+        public UserTaskResult? UserTaskResult { get; set; }
     }
     public class UserTaskResult
     {
-        public string Description { get; set; }
-        public EUserStatus Status { get; set; }
+        public string? Description { get; set; }
+        public EUserTaskStatus Status { get; set; }
     }
 }

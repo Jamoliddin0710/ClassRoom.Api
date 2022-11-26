@@ -12,12 +12,14 @@ namespace ClassRoom.Controllers
     [ApiController]
     public partial class AccountController : ControllerBase
     {
+        private readonly ILogger _logger;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, ILogger<AccountController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _logger = logger;
         }
 
         [HttpPost("signup")]
@@ -81,6 +83,8 @@ namespace ClassRoom.Controllers
                 return NotFound();
             }
             var user = await _userManager.Users.FirstAsync(user => user.UserName == username);
+            _logger.LogInformation("user login with id {0}",user.Id);
+            //logger orqali consolega yozish
             var userdto = user.Adapt<UserDto>();
             //userdto ga userdagi userdto qabul qila oladigan qiymatlarni oladi 
             return Ok(userdto);

@@ -1,8 +1,7 @@
 ﻿using ClassRoom.Context;
 using ClassRoom.Entities;
 using ClassRoom.Model;
-using Mapster;
-using Microsoft.AspNetCore.Http;
+//using Mapster;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -26,8 +25,7 @@ namespace ClassRoom.Controllers
         [HttpGet("get-courses")]
         public async Task<IActionResult> GetCourse()
         {
-          
-                var courses = await _context.Courses.ToListAsync();
+               var courses = await _context.Courses.ToListAsync();
                 List<CourseDto> courseDtos = courses.Select(c=>c.ToDto()).ToList();
                return Ok(courseDtos);
         }
@@ -39,18 +37,16 @@ namespace ClassRoom.Controllers
             if (course is null)
                 return NotFound();
 
-            var coursedto = course.Adapt<CourseDto>();
 
-            return Ok(coursedto);
+            return Ok(course.ToDto());
         }
 
         [HttpPost("create-course")]
         public async Task<IActionResult> CreateCourse([FromBody]CourseModel courseModel)
         {
-            
-            var user = await _userManager.GetUserAsync(User);
+           var user = await _userManager.GetUserAsync(User);
 
-            if(user == null)
+          if(user == null)
             {
                 return NotFound();
             }
@@ -75,7 +71,7 @@ namespace ClassRoom.Controllers
             return Ok(course.ToDto());
         }
 
-        [HttpPut("Update:{id}")]
+        [HttpPut("UpdateCourse{id}")]
         public async Task<IActionResult> UpdateCourse(Guid id ,[FromBody] UpdateCourseDto updateCourseDto)
         {
             if(!ModelState.IsValid)
@@ -100,6 +96,7 @@ namespace ClassRoom.Controllers
                 return NotFound();
             }
             var user = await _userManager.GetUserAsync(User);
+
             if(!course.Users.Any(u => u.UserId == user.Id && u.IsAdmin) == true)
             {
                 return Forbid();
@@ -110,7 +107,7 @@ namespace ClassRoom.Controllers
             return Ok();
         }
 
-        [HttpGet("{courseId}/add-task")]
+        [HttpGet("{courseId}/join-course")]
         public async Task<IActionResult> JoinTasks(Guid courseId)
         {
             var course = await _context.Courses.FirstOrDefaultAsync(course => course.Id == courseId);

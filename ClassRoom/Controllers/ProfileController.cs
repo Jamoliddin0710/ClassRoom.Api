@@ -5,7 +5,6 @@ using ClassRoom.Migrations;
 using ClassRoom.Model;
 using ClassRotom.Mapper;
 using Mapster;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -27,11 +26,13 @@ namespace ClassRoom.Controllers
         public async Task<IActionResult> GetUserCourse()
         {
             var user = await _userManager.GetUserAsync(User);
+            if(user is null)
+            {
+                return NotFound("user is null");
+            }
             var coursesDto = user.Courses.Select(course => course.Course.ToDto()).ToList();
             
  
-
-
             return Ok(coursesDto ?? new List<CourseDto>());
         }
 
@@ -39,6 +40,10 @@ namespace ClassRoom.Controllers
         public async Task<IActionResult> GetUserTask(Guid courseId)
         {
             var user = await _userManager.GetUserAsync(User);
+            if(user is null)
+            {
+                return NotFound("user is null");
+            }
             var usercourse = user.Courses.FirstOrDefault(usercourse=>usercourse.CourseId == courseId);
             var tasks = usercourse.Course.Tasks.ToList();
             if(tasks is null)
@@ -50,7 +55,7 @@ namespace ClassRoom.Controllers
             {
                 var result = task.Adapt<UserTaskResultDto>();
                 var resultentity = task.UserTasks.FirstOrDefault(task => task.UserId == user.Id);
-                result.UserResult = resultentity == null ? null : new UserTaskResult()
+                result.UserTaskResult = resultentity == null ? null : new UserTaskResult()
                 {
                     Status = resultentity.Status,
                     Description = resultentity.Description,
@@ -64,11 +69,11 @@ namespace ClassRoom.Controllers
         }
 
         [HttpPost("addressresult/courseId{courseId}/taskId{taskId}")]
-        public async Task<IActionResult> GetAddresResult(Guid courseId, Guid taskId , ResultTaskDto resultTask)
+        public async Task<IActionResult> GetAddresResult(Guid courseId, Guid taskId , CreateUserTaskResultDto resultTask)
         {
             var user =  await _userManager.GetUserAsync(User);
-
-            var usertask = await _context.UserTask.FirstOrDefaultAsync(user => user.TaskId == taskId && user.UserId == user.Id);
+            var usertask = await _context.UserTask.
+                FirstOrDefaultAsync(user => user.TaskId == taskId && user.UserId == user.Id);
             if(usertask is null)
             {
                 usertask = new UserTask()

@@ -1,0 +1,20 @@
+  [INF] {yyyy-MM-dd HH:mm} Request starting HTTP/2 GET https://localhost:7233/api/Account/bumen - -
+  [INF] {yyyy-MM-dd HH:mm} Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+  [INF] {yyyy-MM-dd HH:mm} Executing endpoint 'ClassRoom.Controllers.AccountController.Profile (ClassRoom)'
+  [INF] {yyyy-MM-dd HH:mm} Route matched with {action = "Profile", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Profile(System.String) on controller ClassRoom.Controllers.AccountController (ClassRoom).
+  [INF] {yyyy-MM-dd HH:mm} Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+  [INF] {yyyy-MM-dd HH:mm} Executed DbCommand (73ms) [Parameters=[@__username_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."UserName" = @__username_0)
+  [INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."UserName" = @__username_0
+LIMIT 1
+  [INF] {yyyy-MM-dd HH:mm} user login with id "77defb8c-6602-439d-a03c-cc2cbe0f69ec"
+  [INF] {yyyy-MM-dd HH:mm} Executing OkObjectResult, writing value of type 'ClassRoom.Model.UserDto'.
+  [INF] {yyyy-MM-dd HH:mm} Executed action ClassRoom.Controllers.AccountController.Profile (ClassRoom) in 8924.1171ms
+  [INF] {yyyy-MM-dd HH:mm} Executed endpoint 'ClassRoom.Controllers.AccountController.Profile (ClassRoom)'
+  [INF] {yyyy-MM-dd HH:mm} Request finished HTTP/2 GET https://localhost:7233/api/Account/bumen - - - 200 - application/json;+charset=utf-8 9297.7854ms

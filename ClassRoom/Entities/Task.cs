@@ -11,11 +11,12 @@ namespace ClassRoom.Entities
         public DateTime EndDate { get; set; }
         public DateTime StartDate { get; set; }
         public int MaxScore { get; set; }
-        public EUserStatus Status { get; set; }
+        public ETaskStatus Status { get; set; }
         public Guid CourseId { get; set; }
         [ForeignKey(nameof(CourseId))]
         public virtual Course? Course { get; set; }
-        public virtual List<UserTask> UserTasks { get; set; }
+        public virtual List<UserTask>? UserTasks { get; set; }
+        public virtual List<TaskComment>? TaskComments { get; set; }
      
 
     }

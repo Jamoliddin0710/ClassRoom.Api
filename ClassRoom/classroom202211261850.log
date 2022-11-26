@@ -1,0 +1,89 @@
+  [2022-11-26 18:50:00.038 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (74ms) [Parameters=[@__username_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."UserName" = @__username_0)
+  [2022-11-26 18:50:00.388 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."UserName" = @__username_0
+LIMIT 1
+  [2022-11-26 18:50:00.886 +05:00 INF] {yyyy-MM-dd HH:mm} user login with id "77defb8c-6602-439d-a03c-cc2cbe0f69ec"
+  [2022-11-26 18:50:01.253 +05:00 INF] {yyyy-MM-dd HH:mm} Executing OkObjectResult, writing value of type 'ClassRoom.Model.UserDto'.
+  [2022-11-26 18:50:01.310 +05:00 INF] {yyyy-MM-dd HH:mm} Executed action ClassRoom.Controllers.AccountController.Profile (ClassRoom) in 8953.052ms
+  [2022-11-26 18:50:01.316 +05:00 INF] {yyyy-MM-dd HH:mm} Executed endpoint 'ClassRoom.Controllers.AccountController.Profile (ClassRoom)'
+  [2022-11-26 18:50:01.351 +05:00 INF] {yyyy-MM-dd HH:mm} Request finished HTTP/2 GET https://localhost:7233/api/Account/bumen - - - 200 - application/json;+charset=utf-8 9311.0115ms
+  [2022-11-26 18:50:05.944 +05:00 INF] {yyyy-MM-dd HH:mm} Request starting HTTP/2 GET https://localhost:7233/api/Course/get-courses - -
+  [2022-11-26 18:50:05.997 +05:00 INF] {yyyy-MM-dd HH:mm} Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+  [2022-11-26 18:50:05.999 +05:00 INF] {yyyy-MM-dd HH:mm} Executing endpoint 'ClassRoom.Controllers.CourseController.GetCourse (ClassRoom)'
+  [2022-11-26 18:50:06.007 +05:00 INF] {yyyy-MM-dd HH:mm} Route matched with {action = "GetCourse", controller = "Course"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCourse() on controller ClassRoom.Controllers.CourseController (ClassRoom).
+  [2022-11-26 18:50:06.167 +05:00 INF] {yyyy-MM-dd HH:mm} Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+  [2022-11-26 18:50:06.188 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Key", "c"."Name"
+FROM "Courses" AS "c"
+  [2022-11-26 18:50:06.538 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (5ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CourseId", "u"."IsAdmin", "u"."UserId"
+FROM "userCourses" AS "u"
+WHERE "u"."CourseId" = @__get_Item_0
+  [2022-11-26 18:50:06.648 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__get_Item_0
+  [2022-11-26 18:50:06.684 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__get_Item_0
+  [2022-11-26 18:50:06.697 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CourseId", "u"."IsAdmin", "u"."UserId"
+FROM "userCourses" AS "u"
+WHERE "u"."CourseId" = @__get_Item_0
+  [2022-11-26 18:50:06.709 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CourseId", "u"."IsAdmin", "u"."UserId"
+FROM "userCourses" AS "u"
+WHERE "u"."CourseId" = @__get_Item_0
+  [2022-11-26 18:50:06.727 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CourseId", "u"."IsAdmin", "u"."UserId"
+FROM "userCourses" AS "u"
+WHERE "u"."CourseId" = @__get_Item_0
+  [2022-11-26 18:50:06.740 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CourseId", "u"."IsAdmin", "u"."UserId"
+FROM "userCourses" AS "u"
+WHERE "u"."CourseId" = @__get_Item_0
+  [2022-11-26 18:50:06.756 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__get_Item_0
+  [2022-11-26 18:50:06.776 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__get_Item_0
+  [2022-11-26 18:50:06.790 +05:00 INF] {yyyy-MM-dd HH:mm} Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ClassRoom.Model.CourseDto, ClassRoom, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+  [2022-11-26 18:50:06.802 +05:00 INF] {yyyy-MM-dd HH:mm} Executed action ClassRoom.Controllers.CourseController.GetCourse (ClassRoom) in 785.7165ms
+  [2022-11-26 18:50:06.805 +05:00 INF] {yyyy-MM-dd HH:mm} Executed endpoint 'ClassRoom.Controllers.CourseController.GetCourse (ClassRoom)'
+  [2022-11-26 18:50:06.808 +05:00 INF] {yyyy-MM-dd HH:mm} Request finished HTTP/2 GET https://localhost:7233/api/Course/get-courses - - - 200 - application/json;+charset=utf-8 863.6421ms
+  [2022-11-26 18:50:19.979 +05:00 INF] {yyyy-MM-dd HH:mm} Request starting HTTP/2 GET https://localhost:7233/api/Course/GetCoursesById6e0450ac-4f18-4b20-87cd-74cbe44c4a6e - -
+  [2022-11-26 18:50:20.045 +05:00 INF] {yyyy-MM-dd HH:mm} Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+  [2022-11-26 18:50:20.049 +05:00 INF] {yyyy-MM-dd HH:mm} Executing endpoint 'ClassRoom.Controllers.CourseController.GetCourseById (ClassRoom)'
+  [2022-11-26 18:50:20.063 +05:00 INF] {yyyy-MM-dd HH:mm} Route matched with {action = "GetCourseById", controller = "Course"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCourseById(System.Guid) on controller ClassRoom.Controllers.CourseController (ClassRoom).
+  [2022-11-26 18:50:20.143 +05:00 INF] {yyyy-MM-dd HH:mm} Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+  [2022-11-26 18:50:20.178 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Key", "c"."Name"
+FROM "Courses" AS "c"
+WHERE "c"."Id" = @__id_0
+LIMIT 1
+  [2022-11-26 18:50:20.190 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CourseId", "u"."IsAdmin", "u"."UserId"
+FROM "userCourses" AS "u"
+WHERE "u"."CourseId" = @__get_Item_0
+  [2022-11-26 18:50:20.204 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__get_Item_0
+  [2022-11-26 18:50:20.218 +05:00 INF] {yyyy-MM-dd HH:mm} Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__get_Item_0
+  [2022-11-26 18:50:20.227 +05:00 INF] {yyyy-MM-dd HH:mm} Executing OkObjectResult, writing value of type 'ClassRoom.Model.CourseDto'.
+  [2022-11-26 18:50:20.232 +05:00 INF] {yyyy-MM-dd HH:mm} Executed action ClassRoom.Controllers.CourseController.GetCourseById (ClassRoom) in 163.4923ms
+  [2022-11-26 18:50:20.236 +05:00 INF] {yyyy-MM-dd HH:mm} Executed endpoint 'ClassRoom.Controllers.CourseController.GetCourseById (ClassRoom)'
+  [2022-11-26 18:50:20.238 +05:00 INF] {yyyy-MM-dd HH:mm} Request finished HTTP/2 GET https://localhost:7233/api/Course/GetCoursesById6e0450ac-4f18-4b20-87cd-74cbe44c4a6e - - - 200 - application/json;+charset=utf-8 259.6512ms

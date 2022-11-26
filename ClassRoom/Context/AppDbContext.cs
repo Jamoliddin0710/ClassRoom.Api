@@ -15,6 +15,7 @@ namespace ClassRoom.Context
         public DbSet<UserCourse> userCourses { get; set; }
         public DbSet<UserTask> UserTask { get; set; }
         public DbSet<Task> Tasks { get; set; }
+        public DbSet<TaskComment> TaskComments { get; set; }
         
     }
 }

@@ -12,7 +12,6 @@ namespace ClassRoom.Entities
         [ForeignKey("TaskId")]
         public virtual Task? Task { get; set; }
         public string Description { get; set; }
-        public EUserStatus Status { get; set; }
-
-        }
+        public EUserTaskStatus Status { get; set; }
     }
+}

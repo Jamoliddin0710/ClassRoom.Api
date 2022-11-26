@@ -1,0 +1,19 @@
+  [2022-11-26 18:49:42.446 +05:00 INF] {yyyy-MM-dd HH:mm} User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+  [2022-11-26 18:49:42.932 +05:00 INF] {yyyy-MM-dd HH:mm} Now listening on: https://localhost:7233
+  [2022-11-26 18:49:42.936 +05:00 INF] {yyyy-MM-dd HH:mm} Now listening on: http://localhost:5233
+  [2022-11-26 18:49:42.945 +05:00 INF] {yyyy-MM-dd HH:mm} Application started. Press Ctrl+C to shut down.
+  [2022-11-26 18:49:42.947 +05:00 INF] {yyyy-MM-dd HH:mm} Hosting environment: Development
+  [2022-11-26 18:49:42.950 +05:00 INF] {yyyy-MM-dd HH:mm} Content root path: C:\Users\User\Desktop\C# Mavzular\ClassRoom\ClassRoom\
+  [2022-11-26 18:49:44.458 +05:00 INF] {yyyy-MM-dd HH:mm} Request starting HTTP/2 GET https://localhost:7233/swagger/index.html - -
+  [2022-11-26 18:49:45.010 +05:00 INF] {yyyy-MM-dd HH:mm} Request finished HTTP/2 GET https://localhost:7233/swagger/index.html - - - 200 - text/html;charset=utf-8 556.2804ms
+  [2022-11-26 18:49:45.084 +05:00 INF] {yyyy-MM-dd HH:mm} Request starting HTTP/2 GET https://localhost:7233/_framework/aspnetcore-browser-refresh.js - -
+  [2022-11-26 18:49:45.084 +05:00 INF] {yyyy-MM-dd HH:mm} Request starting HTTP/2 GET https://localhost:7233/_vs/browserLink - -
+  [2022-11-26 18:49:45.096 +05:00 INF] {yyyy-MM-dd HH:mm} Request finished HTTP/2 GET https://localhost:7233/_framework/aspnetcore-browser-refresh.js - - - 200 11955 application/javascript;+charset=utf-8 11.3104ms
+  [2022-11-26 18:49:45.183 +05:00 INF] {yyyy-MM-dd HH:mm} Request finished HTTP/2 GET https://localhost:7233/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 98.3716ms
+  [2022-11-26 18:49:45.235 +05:00 INF] {yyyy-MM-dd HH:mm} Request starting HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - -
+  [2022-11-26 18:49:45.417 +05:00 INF] {yyyy-MM-dd HH:mm} Request finished HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 182.7049ms
+  [2022-11-26 18:49:52.040 +05:00 INF] {yyyy-MM-dd HH:mm} Request starting HTTP/2 GET https://localhost:7233/api/Account/bumen - -
+  [2022-11-26 18:49:52.210 +05:00 INF] {yyyy-MM-dd HH:mm} Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+  [2022-11-26 18:49:52.236 +05:00 INF] {yyyy-MM-dd HH:mm} Executing endpoint 'ClassRoom.Controllers.AccountController.Profile (ClassRoom)'
+  [2022-11-26 18:49:52.327 +05:00 INF] {yyyy-MM-dd HH:mm} Route matched with {action = "Profile", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Profile(System.String) on controller ClassRoom.Controllers.AccountController (ClassRoom).
+  [2022-11-26 18:49:58.179 +05:00 INF] {yyyy-MM-dd HH:mm} Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 

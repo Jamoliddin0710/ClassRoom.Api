@@ -100,6 +100,38 @@ namespace ClassRoom.Migrations
                     b.ToTable("Tasks");
                 });
 
+            modelBuilder.Entity("ClassRoom.Entities.TaskComment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("ParentId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("TaskId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentId");
+
+                    b.HasIndex("TaskId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("TaskComments");
+                });
+
             modelBuilder.Entity("ClassRoom.Entities.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -338,6 +370,27 @@ namespace ClassRoom.Migrations
                     b.Navigation("Course");
                 });
 
+            modelBuilder.Entity("ClassRoom.Entities.TaskComment", b =>
+                {
+                    b.HasOne("ClassRoom.Entities.TaskComment", "Parent")
+                        .WithMany("Children")
+                        .HasForeignKey("ParentId");
+
+                    b.HasOne("ClassRoom.Entities.Task", "Task")
+                        .WithMany("TaskComments")
+                        .HasForeignKey("TaskId");
+
+                    b.HasOne("ClassRoom.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Parent");
+
+                    b.Navigation("Task");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("ClassRoom.Entities.UserCourse", b =>
                 {
                     b.HasOne("ClassRoom.Entities.Course", "Course")
@@ -434,7 +487,14 @@ namespace ClassRoom.Migrations
 
             modelBuilder.Entity("ClassRoom.Entities.Task", b =>
                 {
+                    b.Navigation("TaskComments");
+
                     b.Navigation("UserTasks");
+                });
+
+            modelBuilder.Entity("ClassRoom.Entities.TaskComment", b =>
+                {
+                    b.Navigation("Children");
                 });
 
             modelBuilder.Entity("ClassRoom.Entities.User", b =>

@@ -12,7 +12,7 @@ namespace ClassRoom.Model
         public DateTime EndDate { get; set; }
         public DateTime StartDate { get; set; }
         public int MaxScore { get; set; }
-        public EUserStatus Status { get; set; }
+        public ETaskStatus Status { get; set; }
        
     }
 }
